@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <p id="affiche1"></p>
+
+        <p id="affiche2"></p>
+
+        <script>
+            
+            // declaration d'une variable et initialisation avec un number  
+            // un integer
+            var age = 22;
+            // un float
+            var pi  = 3.14159;
+
+            // typeof retourne 'number'
+            var typeAge = typeof( age ); 
+            var typePi  = typeof( pi ); 
+
+            // 
+            // declaration d'une variable et initialisation avec un string  
+            var annee = "2020"; 
+            // typeof retourne 'string'
+            var typeAnnee1  = typeof( annee ); 
+
+            var plusTard = annee + 5;
+            // resultat 20205 parce que concatenation de string  
+            var typePlusTard =  typeof( plusTard );  
+            // -> string 
+
+
+            // conversion du 'string' en 'number'
+            annee = parseInt( annee );
+            var typeAnnee2  = typeof( annee ); 
+
+            var plusTard = annee + 5;
+            // resultat 2025 parce que addition de number  
+            var typePlusTard =  typeof( plusTard ); 
+            // -> number 
+
+
+
+
+            // déclartion de la variable 'name' de type string
+            // cette ligne sert uniquemen à afficher nos resultats
+        document.getElementById( "affiche1" ).innerHTML += "age = " + age + "<br>";
+        document.getElementById( "affiche1" ).innerHTML += "type de 'age' = " + typeAge + "<br><br>";
+        document.getElementById( "affiche1" ).innerHTML += "pi = " + pi + "<br>";
+        document.getElementById( "affiche1" ).innerHTML += "type de 'pi' = " + typePi + "<br><br>";
+
+        document.getElementById( "affiche1" ).innerHTML += "annee = " + annee + "<br>";
+        document.getElementById( "affiche1" ).innerHTML += "type de 'annee' = " + typeAnnee1 + "<br><br>";
+        document.getElementById( "affiche1" ).innerHTML += "après le parseInt' = " + typeAnnee2 + "<br><br>";
+
+        document.getElementById( "affiche1" ).innerHTML += "plusTard = " + plusTard + "<br>";
+        document.getElementById( "affiche1" ).innerHTML += "type de 'plusTard' = " + typePlusTard + "<br><br>";
+
+
+
+
+        document.getElementById( "affiche2" ).innerHTML +=  '<br>';
+
+            console.log( result )
+        </script>
+
+   </body>
+</html>

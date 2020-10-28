@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cours</title>
+        <link type="text/css" rel="stylesheet" href="cours.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1 id="background"></h1>
+        </header>
+
+        
+        <div id="div1"> </div>
+        <div id="div2"> </div>
+
+        <p id="p1"> </p>
+
+        <script src="mesFonctionJS.js" type="text/javascript"></script>
+        
+        <script>
+
+
+            function createHeader(identifiant)
+            {
+                var head = document.getElementById(identifiant);
+                
+            
+            }
+
+
+            function createButton( labelButton, func )
+            {   //<button onclick="doClik()">CLIK !</button>
+                var res = "<button onclick=\"" + func +"()\">"+labelButton+"</button>";
+                return  res;
+            }
+              
+            function doClik()
+            {
+                writeInId( "p1", "tu as cliqué CLIK" );
+
+            }
+
+            function doImage()
+            {
+                var image = createImage( "morgana.png" );
+                writeInId( "div1", image  );            
+            }
+
+            function doImage2()
+            {
+                var image = createImage( "morgana.png" );
+                writeInId( "entete", image  );            
+            }
+
+
+
+
+            var titre = sayWord("background","morgana");
+
+            var button = createButton( "CLIK !", "doClik" );
+
+            console.log( button );
+            writeInId( "div1",  button  );            
+
+            button = createButton( "Nouvelle Image", "doImage" );
+            writeInId( "div2",  button  );     
+            
+            var creatEntete = createHeader("background");
+         
+
+            //document.getElementById( "aff2" ).innerHTML +=  '<br>';
+
+            //console.log( "rien" )
+        </script>
+
+   </body>
+</html>
+
+
+
+
+
+
+
+

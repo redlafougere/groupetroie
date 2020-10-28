@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <p id="aff1"></p>
+
+        <p id="aff2"></p>
+
+        <script>
+            
+            // declaration d'une variable et initialisation avec un boolean  
+       
+            var vrai = true;
+            var faux = false;
+
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'vrai' = " + vrai + "("+ typeof(vrai) + ")<br>";
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'faux' = " + faux + "("+ typeof(faux) + ")<br>";
+
+
+            var result;
+
+
+            var age = 1;
+
+            var mineurb = (age >= 18);
+            
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'mineurb' = " + mineurb + "("+ typeof(mineurb) + ")<br>";
+
+            if ( age >= 18 )
+                result = "majeur";
+            else if ( age < 3)
+                result = "creche";    
+            else if ( age < 16)
+                result = "college";
+            else
+                result = "mineur";
+
+
+
+            var posBallX = 123;
+            // ube raquette 50 de large
+            var posPaddleLeftX = 100;
+            var posPaddleRightX = posPaddleLeftX + 50;
+
+            var result2;
+
+
+            // si Ball passa à gauche
+            if ( posBallX < posPaddleLeftX )
+            {
+                result = "raté";
+                result2 = " o    |====|";
+            }
+            // sinon si Ball passa à droite
+            else if ( posBallX > posPaddleRightX )
+            {
+                result = "raté";
+
+                result2 = "  |====|   o";
+            }
+            // sinon gagné
+            else
+            {
+                result = "gagné";
+                result2 = "  |==o==|";
+            }
+            
+
+            posBallX = 123;
+
+            result2 = "inconnu";
+            
+            result = "gagné";
+
+
+            // voir regle de Boole https://fr.wikipedia.org/wiki/Alg%C3%A8bre_de_Boole_(logique)   
+            // un test avec de or 
+            if ( (posBallX < posPaddleLeftX) || (posBallX > posPaddleRightX) )
+                result = "raté";
+            // equivalent à la suite
+            if ( (posBallX < posPaddleLeftX) )
+                result = "raté";
+            
+            if ( (posBallX > posPaddleRightX) )
+                result = "raté";
+            
+
+            posBallX = 123;
+            result = "perdu";
+            if ( (posBallX > posPaddleLeftX) && (posBallX < posPaddleRightX) )
+                result = "gagné";
+            // la suite n'est pas équivalente
+            /* 
+            if (posBallX > posPaddleLeftX)
+                result = "gagné";
+            if  (posBallX < posPaddleRightX) 
+                result = "gagné";
+            */
+
+            var gagne = (posBallX > posPaddleLeftX) && (posBallX < posPaddleRightX);
+
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'result' = " + result + " ("+ typeof(result) + ")<br>";
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'result2' = " + result2 + " ("+ typeof(result2) + ")<br>";
+
+            document.getElementById( "aff1" ).innerHTML += 
+                    "valeur de 'gagne' = " + gagne + " ("+ typeof(gagne) + ")<br>";
+
+
+
+        document.getElementById( "affiche2" ).innerHTML +=  '<br>';
+
+            console.log( result )
+        </script>
+
+   </body>
+</html>

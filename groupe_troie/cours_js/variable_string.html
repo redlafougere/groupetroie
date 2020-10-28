@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>La ville de Maubeuge</title>
+    </head>
+    
+    <body>
+        <p id="affiche1"></p>
+
+        <p id="affiche2"></p>
+
+        <script>
+            
+            // déclartion de la variable 'name' de type string
+            var name1 = "jean";
+            var name2 = "luc";
+            var surname1 = "Dupont";
+            var surname2 = "Durand";
+
+            // déclaration de la variable
+            var name3;
+            //affectation de la variable
+            name3 = "pierre";
+
+
+            // concaténation de plusieurs string
+            var fullName1 = name1 + "-" + name2 + " " + surname1;            
+            
+
+            var fullName2 = name1 + "-" + name3 + " " + surname2;            
+
+            // concaténation sur une même string
+            //name = name + name2;
+            var name = "";
+            name += name2;
+            name += name2;
+
+
+            var result;
+
+            result = fullName1 + "<br>";
+            result += fullName2 + "<br>";
+            result += name + "<br>";
+
+            // cette ligne sert uniquemen à afficher nos resultats
+            document.getElementById( "affiche1" ).innerHTML +=  fullName1 + "<br>";
+            document.getElementById( "affiche1" ).innerHTML +=  fullName2 + "<br>";
+            document.getElementById( "affiche1" ).innerHTML +=  name + "<br>";
+
+            // utilisation du caractère 'escape' pour neutraliser un caratere spécial
+            var phrase1 = 'je vais à l\'école';
+            var phrase2 = "voici \"Jean\" !";
+            var phrase3 = "voici ma string :\"" + name1 + "\" !";
+
+            document.getElementById( "affiche2" ).innerHTML +=  phrase1 + '<br>';
+            document.getElementById( "affiche2" ).innerHTML +=  phrase2 + '<br>';
+            document.getElementById( "affiche2" ).innerHTML +=  phrase3 + '<br>';
+
+            console.log( result )
+        </script>
+
+   </body>
+</html>

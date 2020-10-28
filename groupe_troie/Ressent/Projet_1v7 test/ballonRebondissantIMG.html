@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>deplacer Texte</title>
+		<style>
+			
+			#tableau
+			{
+				background-color: grey;
+			}
+
+			#ball
+			{
+				position: absolute;
+				width:  20px; 
+				height: 20px; 
+			}
+
+			#text
+			{
+				position: absolute;
+				top: 10px; 
+				left: 60px; 
+				background-color: white;
+			}
+
+			#raquette
+			{
+				position: absolute;
+				top: 160px; 
+				left: 150px; 
+			}
+
+
+		</style>
+		<script>
+
+
+			/*
+			 *	voici 
+			 *	
+			 *	
+			 *	
+			 */
+
+			// limit width area game
+			var limiteX = 350;
+			var limiteY = 200;
+
+			var largeurBallon = 20; 
+			var hauteurBallon = 20 ; 
+
+
+			// ball init at center area game
+			var posX = limiteX/2;
+			var posY = limiteY/2;
+
+			var dx = 20;
+			var dy = 20;
+
+			var posRaqX = limiteX/2;
+
+
+			/*
+			 *	
+			 *	
+			 */
+			function displayBallAt( x, y )
+			{
+				posX = x;
+				posY = y;
+				displayBall();
+			}
+
+			function displayBall()
+			{
+ 				document.getElementById("ball").style.left = posX+"px";
+				document.getElementById("ball").style.top  = posY+"px";
+			}
+
+
+			function displayPaddle()
+			{
+ 				document.getElementById("raquette").style.left = posRaqX+"px";
+			}
+
+
+			function init()
+			{
+				//init du terrain de jeu
+				document.getElementById("tableau").style.width   = limiteX+"px";
+				document.getElementById("tableau").style.height  = limiteY+"px";
+ 
+ 				displayBall();
+				displayPaddle();
+
+				// get size ball
+				//largeurBallon =  document.getElementById("text").offsetWidth;
+				//hauteurBallon =  document.getElementById("text").offsetHeight;
+			}
+
+
+
+			// deplacement de la balle
+			function deplacer()
+			{
+				// test if ball over right
+				if (posX > (limiteX -largeurBallon ))
+					dx = -dx;
+
+				// test if ball over left
+				if (posX < 0 )
+					dx = -dx;
+
+				// test if ball over top
+				if (posY < - hauteurBallon )
+					dy = -dy;
+
+				// test if ball over bottom
+				if (posY > (limiteY - (hauteurBallon*2)  ) )
+					dy = -dy;
+
+				// increment position
+				posX = posX + dx;
+				posY = posY + dy;
+
+				displayBall();
+			}
+
+			//touche droite
+			function droite()
+			{
+				if (posRaqX < (limiteX - 30 ))
+					posRaqX +=  10;
+				displayPaddle();	
+			}
+
+			//touche gauche
+			function gauche()
+			{
+				if (posRaqX > 0 )
+					posRaqX = posRaqX - 10;	
+				displayPaddle();
+			}
+
+
+			// le déplacement a lieu 10 fois par seconde
+			setInterval( deplacer, 100 );
+
+
+		</script>	
+	</head>
+	<!--  on load page init game  -->
+	<body onload="init()">
+
+		<div id="tableau">
+			<img id="ball"  src="ballon.png" />
+			<p id="raquette">====</p>
+		</div>
+
+		<br>
+
+		<button onclick="gauche()">gauche</button>
+		<button onclick="droite()">droite</button>
+
+		<button onclick="displayBallAt( 0, 0)">reset</button>
+
+
+	</body>
+</html>

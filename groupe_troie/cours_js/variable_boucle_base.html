@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+
+        <p id="p1">   </p>
+        <div id="monDiv1"></div>
+
+
+        <script src="mesFonctionJS.js" type="text/javascript"></script>
+        <script>
+
+            function bonjour()
+            {
+                writeInId( "p1",  "bonjour !<br>"  );
+            } 
+
+
+            // le nombre de bonjour attendu
+            var nbrBonjour = 5;
+
+            bonjour();
+            bonjour();
+            bonjour();
+            bonjour();
+            bonjour();
+            writeInId( "p1",  "<br>"  );
+
+            // la boucle for 
+            // comprend 3 sections
+            //      - initialisation 
+            //      - test, la boucle tourn 'tant que'
+            //      - incremention
+            for( var i = 0 ; i < nbrBonjour ;  i++ )
+            {  
+                writeInId( "p1",  i + "-> " );
+                bonjour();
+            }
+
+            writeInId( "p1",  "<br>"  );
+
+
+            // while() { ...}
+            var i = nbrBonjour;
+            while( i-- )
+            {
+                writeInId( "p1",  i + "-> " );
+                bonjour();
+            }
+            writeInId( "p1",  i + "-> " );
+
+            writeInId( "p1",  "<br>"  );
+
+            // do { ... } while()
+            var i = nbrBonjour;
+            do
+            {
+                writeInId( "p1",  i + "-> " );
+                bonjour();
+            }
+            while( --i);
+
+            writeInId( "p1",  i + "-> " );
+        </script>
+
+   </body>
+</html>
+
+
+
+
+
+
+
+

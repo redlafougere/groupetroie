@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <p id="aff1"></p>
+
+        <p id="aff2"></p>
+
+        <script>
+          
+       
+            var nbrWheel = 3;
+
+            // notice about double equal
+            // attention au double égual
+            if ( nbrWheel == 4 ) 
+                typeVehicle = "car";
+            else if ( nbrWheel == 6 )
+                typeVehicle = "camion";
+            else if ( nbrWheel == 3 )
+                typeVehicle = "tricycle";
+            else
+                typeVehicle = "inconnu";
+      
+            // quand le test porte sur une égalité on peut 
+            // le remplacer par un swicth
+            
+            switch( nbrWheel ) 
+            {
+                case 4 :   typeVehicle = "car";         break;
+                case 3 :   typeVehicle = "tricycle";    break;
+                case 6 :   typeVehicle = "camion";      break;
+                default :  typeVehicle = "inconnu";
+            }
+
+
+            switch( typeVehicle ) 
+            {
+                case "car" : 
+                    nbrWheel = 4;
+                    break;
+                case "camion" : 
+                    nbrWheel = 6;
+                    break;
+                case "tricycle" : 
+                    nbrWheel = 3;
+                    break;
+                
+                default :
+                    nbrWheel = "inconnu";
+            }
+
+
+            document.getElementById( "aff1" ).innerHTML += 
+                    nbrWheel + " roues  -> " + typeVehicle  +"<br>";
+
+
+
+
+
+
+
+        document.getElementById( "aff2" ).innerHTML +=  '<br>';
+
+            console.log( result )
+        </script>
+
+   </body>
+</html>

@@ -1,0 +1,87 @@
+<?php
+include "MyLibrary.php";
+entete();
+?>
+
+</head>
+<body>
+
+      <Header>
+    	<div style="text-align:right">
+      <a href="Accueil.html" id="lien"><h1 id="monstyle3" >AFPA  .</h1></a>
+      </div>
+        
+
+      </header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+              <li class="nav-item ">
+                    <a class="nav-link" href="Accueil.html">Accueil</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="Page_1.html">Skyrim</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link" href="Page_2.html">Jurassic Park</a>
+              </li>
+              <li class="nav-item">
+			<a class="nav-link" href="PhotoSlider.html">Gallerie</a>
+		  </li>
+              <li class="nav-item active" id="actif">
+                    <a class="nav-link" href="Page_3.html">Contact</a>
+              </li>
+
+            </ul>
+      </nav>
+      
+
+
+      <h2 class="centre">Contactez-nous!</h2>
+
+      <div class="container">
+            <form action="/action_page.php">
+                  <label for="fname">Prénom</label>
+                  <input type="text" id="fname" name="prénom" placeholder="Ton Prénom">
+                  <label for="lname">Nom</label>
+                  <input type="text" id="lname" name="nom" placeholder="Ton Nom">
+                  <label for="country">Pays</label>
+                  <select id="country" name="pays">
+                        <option value="france">France</option>
+                        <option value="belgium">Belgique</option>
+                        <option value="switzerland">Suisse</option>
+                  </select>
+
+                  <label for="subject">Message</label>
+                  <textarea id="subject" name="Message" placeholder="Ecrivez ici..." style="height:200px"></textarea>
+                  <form method="link" action="Page_3.html">
+                        <input type="submit" value="Envoyer" >
+                  </form>
+            </form>
+      </div>
+    <footer>
+        <p>Groupe Troie/Formation Développeur Web/Web mobile<br>
+          2 Rue de l'Arsenal, 59131 Rousies<br>
+          https://www.afpa.fr/<br>
+          +33826461414<br>
+          lundi
+          08:00–12:00
+          13:00–17:00<br>
+          mardi 
+          08:00–12:00
+          13:00–17:00<br>
+          mercredi
+          08:00–12:00
+          13:00–17:00<br>
+          jeudi
+          08:00–12:00
+          13:00–17:00<br>
+          vendredi
+          08:00–12:00<br>
+          
+          samedi
+          Fermé
+          dimanche
+          Fermé</p>
+    </footer>
+</body>
+</html>

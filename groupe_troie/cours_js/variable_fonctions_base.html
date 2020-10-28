@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+
+        <p id="p1">   </p>
+
+
+        <div id="monDiv1">   
+        </div>
+
+
+        <script src="mesFonctionJS.js" type="text/javascript"></script>
+        <script>
+            // ***********************************************
+            // declarations des fonctions
+            // ***********************************************
+ 
+            function Met2ImageInId(  id, fileImage1, fileImage2  )
+            {
+                var im = faitImage( fileImage );
+                writeInId(  id, im );
+            }
+
+            function MetImageInId(  id, fileImage )
+            {
+                var im = faitImage( fileImage );
+                writeInId(  id, im );
+            }
+
+
+
+            function faitImage(  nomFichierImage )
+            {
+                var stringImage = "<img src=\"" + nomFichierImage + "\" />"; 
+                return stringImage;
+            }
+
+
+            // 
+            function bonjour( )
+            {
+                writeInId( "p1",  "bonjour !"  );
+            } 
+
+            // 
+            function addition( arg1, arg2 )
+            {
+                var resultat = arg1 + arg2;
+                return resultat;
+            } 
+
+
+            // ***********************************************
+            // section de code
+            // ***********************************************
+
+            // DECLARATION DE VARIABLE
+            var res;
+
+            // affectation de la variable
+            // fonction qui reçoit 2 arguments
+            // et qui retourne une valeurs
+            res = addition( 3, 7 );
+            writeInId( "p1",  res  );       
+
+            writeInId( "p1",  "<br>"  );       
+
+            bonjour();
+
+
+            var chaineImage1 = faitImage( "ballon.png" );
+            writeInId( "monDiv1",  chaineImage1  );       
+
+            MetImageInId(  "monDiv1", "Concert.jpg" );
+
+            MetImageInId(  "monDiv1", "rempart.jpg" );
+
+            MetImageInId(  "monDiv1", "Mairie.jpg", "Jumping.jpg" );
+
+
+        </script>
+
+   </body>
+</html>
+
+
+
+
+
+
+
+

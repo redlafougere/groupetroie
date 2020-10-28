@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+        <p id="aff1"></p>
+        <p id="aff2"></p>
+        <p id="aff3"></p>
+
+        <script>
+          
+            // pas de parametre en entrée
+            // ne retourne rien
+            function sayHello()
+            {
+                sayWord( "Hello" );
+            }
+
+
+            // reçoie 1 parametre
+            // ne retourne rien
+            function sayWord( word )
+            {
+                sayInParagrap( "aff1", word +"<br>");
+            }
+
+            function sayInParagrap ( id, content)
+            {
+                document.getElementById( id ).innerHTML +=  content;
+            }
+            function displayResult( label, value )
+            {
+                  var res = label+" = "+value+" --  ("+ typeof(value)+")";
+                  sayWord( res );
+            }
+
+
+            // reçoie 2 parametres
+            // retourne l'addition des 2 parametre 
+            function addition( a, b)
+            {
+                return a + b;
+            }
+
+
+            sayHello();
+
+            sayWord( "cat" );
+            sayWord( "dog" );
+            sayWord( "mouse" );
+            sayWord( "" );
+
+            var a= 2, b =5;
+
+            displayResult( "a*b", a*b  );
+
+            var c = "jean", d = " luc";
+            displayResult( "c+d", c+d  );
+
+            sayWord( "" );
+
+
+            var result = addition( 11, 22);
+            displayResult( "addition( 11, 22)", result  );
+
+            displayResult( "addition( 3.14, 55 )",  addition( 3.14, 55 ) );
+
+            sayWord( "" );
+
+            displayResult( "addition( \"jean\", \"luc\" )",  addition( "jean", "luc" ) );
+
+            displayResult( "Jean-luc",  addition( addition( "jean", "-"), "luc" ) );
+
+            sayInParagrap( "aff1", "Hello Toto"  );
+            sayInParagrap( "aff2", "Hello Toto"  );
+
+            //document.getElementById( "aff2" ).innerHTML +=  '<br>';
+
+            //console.log( "rien" )
+        </script>
+
+   </body>
+</html>

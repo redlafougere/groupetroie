@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>deplacer Texte</title>
+		<style>
+			
+			#tableau
+			{
+				background-color: grey;
+			}
+
+			#logojuraop
+			{
+				position: absolute;
+				top: 20px; 
+				left: 20px; 
+			}
+
+			#raquette
+			{
+				position: absolute;
+				top: 560px; 
+				left: 280px; 
+			}
+
+
+		</style>
+		<script>
+
+
+			var limiteX = 600;
+			var limiteY = 600;
+
+			var posX = limiteX/2;
+			var posY = limiteY/2;
+
+			var largeurBallon = 20; 
+			var hauteurBallon = 20; 
+
+			var dx = 20;
+			var dy = 20;
+
+			var posRaqX = limiteX/2;
+
+			function displaylogo()
+			{
+				document.getElementById("logojuraop").style.left = posX+"px";
+				document.getElementById("logojuraop").style.top  = posY+"px";
+			}
+
+			function displayPaddle()
+			{
+ 				document.getElementById("raquette").style.left = posRaqX+"px";
+			}
+
+
+
+			function init()
+			{
+				document.getElementById("tableau").style.width   = limiteX+"px";
+				document.getElementById("tableau").style.height  = limiteY+"px";
+ 
+				displaylogo();
+				displayPaddle();
+			}
+
+
+
+			// deplacement de la balle
+			function deplacer()
+			{
+				
+				if (posX > (limiteX -largeurBallon ))
+					dx = -dx;
+
+				if (posX < 0 )
+					dx = -dx;
+
+				if (posY < - hauteurBallon )
+					dy = -dy;
+
+				if (posY > (limiteY - (hauteurBallon*2)  ) )
+					dy = -dy;
+
+				posX = posX + dx;
+				posY = posY + dy;
+
+
+				displaylogo();
+			}
+
+
+			//touche droite
+			function droite()
+			{
+				if (posRaqX < (limiteX - 30 ))
+					posRaqX = posRaqX + 10;	
+					displayPaddle();
+			}
+
+			//touche gauche
+			function gauche()
+			{
+				if (posRaqX > 0 )
+					posRaqX = posRaqX - 10;	
+					displayPaddle();
+			}
+
+
+
+			// le déplacement a lieu 10 fois par seconde
+			setInterval( deplacer, 100 );
+
+
+		</script>	
+	</head>
+	<body onload="init()">
+
+		<div id="tableau">
+			<img id="logojuraop" src="Images/JurassicParkLogo.png" />
+			<p id="raquette">=======</p>
+		</div>
+
+		<br>
+
+		<button onclick="gauche()">gauche</button>
+		<button onclick="droite()">droite</button>
+
+
+	</body>
+</html>
